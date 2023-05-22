@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okjtxdy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okjtxdy
+  template:
+    metadata:
+      labels:
+        app: okjtxdy
+    spec:
+      containers:
+      - image: okteto.dev/okjtxdy:latest
+        name: okjtxdy
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "44979a49-e50c-4d6a-a17b-1ef77de78653"
+        - name: Vless_Path
+          value: "/fsh453"
+        - name: Vmess_UUID
+          value: "209d1cbb-bf2e-43cb-891a-486b4ce6a73d"
+        - name: Vmess_Path
+          value: "/fuh856"
+        - name: Share_Path
+          value: "/v2link"
